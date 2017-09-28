@@ -1,0 +1,51 @@
+{
+  "name": "tf-lambda-api-gateway-example",
+  "version": "0.0.0",
+  "description": "sample node.js lambda function behind an api gateway using terraform",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist/* && webpack",
+    "lint": "./node_modules/.bin/eslint ./lib ./test",
+    "test": "mocha --recursive --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cludden/tf-lambda-api-gateway-example.git"
+  },
+  "keywords": [
+    "node",
+    "terraform",
+    "lambda",
+    "aws",
+    "api",
+    "gateway"
+  ],
+  "author": "chris ludden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cludden/tf-lambda-api-gateway-example/issues"
+  },
+  "homepage": "https://github.com/cludden/tf-lambda-api-gateway-example#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bluebird": "^3.5.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.5.3",
+    "sinon": "^4.0.0",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "boom": "^6.0.0"
+  }
+}

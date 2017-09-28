@@ -1,0 +1,9 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error", { "devDependencies": [ "**/gulpfile.js", "**/webpack.config.js", "**/test/**/*.js" ] }
+    ],
+    "no-use-before-define": "off"
+  }
+}
