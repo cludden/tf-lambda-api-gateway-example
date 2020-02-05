@@ -14,3 +14,7 @@ resource "aws_api_gateway_deployment" "default" {
   stage_name  = "example_lambda_${var.env}"
   rest_api_id = aws_api_gateway_rest_api.example.id
 }
+
+output "url" {
+  value = aws_api_gateway_deployment.default.invoke_url
+}
