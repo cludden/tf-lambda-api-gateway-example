@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf dist/* && webpack",
     "lint": "./node_modules/.bin/eslint ./lib ./test",
-    "test": "mocha --recursive --compilers js:babel-register",
+    "test": "mocha --recursive --require @babel/register",
     "deploy": "npm run build && cd ./terraform && terraform apply -auto-approve",
     "destroy": "cd ./terraform && terraform destroy"
   },
