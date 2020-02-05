@@ -7,10 +7,10 @@ resource "aws_api_gateway_rest_api" "example" {
 # define production deployment
 resource "aws_api_gateway_deployment" "default" {
   depends_on = [
-    "aws_api_gateway_method.hello_world",
-    "aws_api_gateway_integration.hello_world",
+    aws_api_gateway_method.hello_world,
+    aws_api_gateway_integration.hello_world,
   ]
 
   stage_name  = "example_lambda_${var.env}"
-  rest_api_id = "${aws_api_gateway_rest_api.example.id}"
+  rest_api_id = aws_api_gateway_rest_api.example.id
 }
