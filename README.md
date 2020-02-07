@@ -36,8 +36,8 @@ $ npm run build
 
 ## Deploying
 Prereqs:
-- Terraform v0.10+
-- AWS account with high degree of privelages and credentials availabe in the environment
+- Terraform v0.12+
+- AWS account with high degree of privileges and credentials available in the environment
 
 ```shell
 # change into the terraform directory

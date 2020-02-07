@@ -1,10 +1,11 @@
 variable "env" {
-  type        = "string"
+  type        = string
   description = "environment name"
+  default     = "dev"
 }
 
 variable "region" {
-  type        = "string"
+  type        = string
   description = "aws region"
-  default     = "us-west-2"
+  default     = "us-east-1"
 }

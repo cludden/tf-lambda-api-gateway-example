@@ -1,7 +1,8 @@
-const webpack = require('webpack');
+require('webpack');
 
 module.exports = {
   target: 'node',
+  mode: 'production',
   entry: {
     'hello-world': './lib/hello-world',
   },
@@ -20,7 +21,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, mangle: false, compress: true }),
-  ],
+  optimization: {
+    minimize: true,
+  },
 };

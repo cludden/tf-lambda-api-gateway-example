@@ -8,7 +8,7 @@ import { apiGatewayRequest } from '../utils/events';
 describe('hello-world', () => {
   it('should fail (400) if the request body is not valid JSON', async function () {
     const e = apiGatewayRequest({ body: 'hello++' });
-    const res = await fromCallback(done => handler(e, {}, done));
+    const res = await fromCallback((done) => handler(e, {}, done));
     expect(res).to.have.property('statusCode', 400);
     expect(res).to.have.nested.property('headers.Content-Type', 'application/vnd.api+json');
     expect(res).to.have.property('body').that.is.a('string');
@@ -20,7 +20,7 @@ describe('hello-world', () => {
 
   it('should fail (400) if a non-string is provided for name', async function () {
     const e = apiGatewayRequest({ body: { name: 1 } });
-    const res = await fromCallback(done => handler(e, {}, done));
+    const res = await fromCallback((done) => handler(e, {}, done));
     expect(res).to.have.property('statusCode', 400);
     expect(res).to.have.nested.property('headers.Content-Type', 'application/vnd.api+json');
     expect(res).to.have.property('body').that.is.a('string');
@@ -33,7 +33,7 @@ describe('hello-world', () => {
 
   it('should use World as the name if name is missing or empty (200)', async function () {
     const e = apiGatewayRequest({ body: { foo: 'bar' } });
-    const res = await fromCallback(done => handler(e, {}, done));
+    const res = await fromCallback((done) => handler(e, {}, done));
     expect(res).to.have.property('statusCode', 200);
     expect(res).to.have.nested.property('headers.Content-Type', 'application/vnd.api+json');
     expect(res).to.have.property('body').that.is.a('string');
@@ -43,7 +43,7 @@ describe('hello-world', () => {
 
   it('should use the provided name (200)', async function () {
     const e = apiGatewayRequest({ body: { name: 'Bob' } });
-    const res = await fromCallback(done => handler(e, {}, done));
+    const res = await fromCallback((done) => handler(e, {}, done));
     expect(res).to.have.property('statusCode', 200);
     expect(res).to.have.nested.property('headers.Content-Type', 'application/vnd.api+json');
     expect(res).to.have.property('body').that.is.a('string');
